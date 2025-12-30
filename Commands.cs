@@ -1,4 +1,4 @@
-﻿using System.Collections.Concurrent;
+using System.Collections.Concurrent;
 using CounterStrikeSharp.API;
 using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Modules.Commands;
@@ -72,36 +72,6 @@ public partial class WeaponPaints
 		if (!string.IsNullOrEmpty(Localizer["wp_info_refresh"]))
 		{
 			player!.Print(Localizer["wp_info_refresh"]);
-		}
-
-		if (Config.Additional.GloveEnabled)
-			if (!string.IsNullOrEmpty(Localizer["wp_info_glove"]))
-			{
-				player!.Print(Localizer["wp_info_glove"]);
-			}
-
-		if (Config.Additional.AgentEnabled)
-			if (!string.IsNullOrEmpty(Localizer["wp_info_agent"]))
-			{
-				player!.Print(Localizer["wp_info_agent"]);
-			}
-
-		if (Config.Additional.MusicEnabled)
-			if (!string.IsNullOrEmpty(Localizer["wp_info_music"]))
-			{
-				player!.Print(Localizer["wp_info_music"]);
-			}
-		
-		if (Config.Additional.PinsEnabled)
-			if (!string.IsNullOrEmpty(Localizer["wp_info_pin"]))
-			{
-				player!.Print(Localizer["wp_info_pin"]);
-			}
-
-		if (!Config.Additional.KnifeEnabled) return;
-		if (!string.IsNullOrEmpty(Localizer["wp_info_knife"]))
-		{
-			player!.Print(Localizer["wp_info_knife"]);
 		}
 	}
 
@@ -230,7 +200,7 @@ public partial class WeaponPaints
 		}
 		_config.Additional.CommandKnife.ForEach(c =>
 		{
-			AddCommand($"css_{c}", "Knife Menu", (player, _) =>
+			AddCommand($"wp_{c}", "Knife Menu", (player, _) =>
 			{
 				if (giveItemMenu == null) return;
 				if (!Utility.IsPlayerValid(player) || !_gBCommandsAllowed) return;
@@ -525,7 +495,7 @@ public partial class WeaponPaints
 		// Command to open the weapon selection menu for players
 		_config.Additional.CommandGlove.ForEach(c =>
 		{
-			AddCommand($"css_{c}", "Gloves selection menu", (player, info) =>
+			AddCommand($"wp_{c}", "Gloves selection menu", (player, info) =>
 			{
 				if (!Utility.IsPlayerValid(player) || !_gBCommandsAllowed) return;
 
@@ -613,7 +583,7 @@ public partial class WeaponPaints
 		// Command to open the weapon selection menu for players
 		_config.Additional.CommandAgent.ForEach(c =>
 		{
-			AddCommand($"css_{c}", "Agents selection menu", (player, info) =>
+			AddCommand($"wp_{c}", "Agents selection menu", (player, info) =>
 			{
 				if (!Utility.IsPlayerValid(player) || !_gBCommandsAllowed) return;
 
@@ -774,7 +744,7 @@ public partial class WeaponPaints
 		// Command to open the weapon selection menu for players
 		_config.Additional.CommandMusic.ForEach(c =>
 		{
-			AddCommand($"css_{c}", "Music selection menu", (player, info) =>
+			AddCommand($"wp_{c}", "Music selection menu", (player, info) =>
 			{
 				if (!Utility.IsPlayerValid(player) || !_gBCommandsAllowed) return;
 
@@ -909,7 +879,7 @@ public partial class WeaponPaints
 		// Command to open the weapon selection menu for players
 		_config.Additional.CommandPin.ForEach(c =>
 		{
-			AddCommand($"css_{c}", "Pin selection menu", (player, info) =>
+			AddCommand($"wp_{c}", "Pin selection menu", (player, info) =>
 			{
 				if (!Utility.IsPlayerValid(player) || !_gBCommandsAllowed) return;
 
