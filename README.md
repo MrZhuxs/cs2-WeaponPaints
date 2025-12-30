@@ -14,11 +14,8 @@ Unfinished, unoptimized and not fully functional ugly demo weapon paints plugin 
 - Data syncs on player connect
 - Added command **`!wp`** to refresh skins ***(with cooldown in seconds can be configured)***
 - Added command **`!ws`** to show website
-- Added command **`!knife`** to show menu with knives
-- Added command **`!gloves`** to show menu with gloves
-- Added command **`!agents`** to show menu with agents
-- Added command **`!pins`** to show menu with pins
-- Added command **`!music`** to show menu with music
+- The in-game chat menu commands **`!knife`**, **`!gloves`**, **`!agents`**, **`!pins`**, **`!music`** are disabled in this build.
+  - You can still open the menus from console using **`wp_knife`**, **`wp_gloves`**, **`wp_agents`**, **`wp_pins`**, **`wp_music`** (and any aliases configured in `Additional.Command*`).
 - Translations support, submit a PR if you want to share your translation
 
 ## ⚙️ Requirements
